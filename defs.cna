@@ -243,6 +243,135 @@
         'subnet', 'dsquery', 'recon', 'enum', 'AD', 'OU'
         )
     ),
+    #Linux
+    %(cmd => 'cat /etc/issue', desc => 'Verify Linux distro', tags => @(
+        'Linux', 'etc', 'issue', 'cat', 'distro'
+        )
+    ),
+    %(cmd => 'cat /etc/*-release', desc => 'Verify exact version and distribution for Linux', tags => @(
+        'Linux', 'cat', 'etc', 'release', 'version', 'distro'
+        )
+    ),
+    %(cmd => 'cat /etc/*-release | grep -E \'\"NAME=\"|ID|VERSION|ID_LIKE\'', desc => 'Verify exact version and distribution for Linux', tags => @(
+        'Linux', 'cat', 'etc', 'release', 'version', 'distro'
+        )
+    ),
+    %(cmd => 'cat /proc/version', desc => 'Verify Linux version using proc', tags => @(
+        'Linux', 'cat', 'proc', 'version', 'distro'
+        )
+    ),
+    %(cmd => 'rpm -q kernel', desc => 'Get detailed information about the kernel', tags => @(
+        'Linux', 'rpm', 'kernel'
+        )
+    ),
+    %(cmd => 'dmesg | grep Linux', desc => 'Output kernel messages for Linux', tags => @(
+        'Linux', 'dmesg', 'grep', 'kernel'
+        )
+    ),
+    %(cmd => 'ls /boot | grep vmlinuz-', desc => 'Verify the name of the specific version of the kernel', tags => @(
+        'Linux', 'ls', 'grep', 'vmlinuz-', 'kernel'
+        )
+    ),
+    %(cmd => 'lsb_release -a', desc => 'Display information about your specific Linux distrobution', tags => @(
+        'Linux', 'lsb_release', 'LSB', 'distro'
+        )
+    ),
+    %(cmd => 'last -a', desc => 'Show the users who logged in last', tags => @(
+        'Linux', 'last', 'login', 'log'
+        )
+    ),
+    %(cmd => 'uname -a/-mrs', desc => 'Display the software and hardware information in current running Linux system', tags => @(
+        'Linux', 'uname', 'software', 'hardware', 'system'
+        )
+    ),
+    %(cmd => 'id', desc => 'Print user and group information for the specified USERNAME, or (when USERNAME omitted) for the current user', tags => @(
+        'Linux', 'id', 'user', 'group', 'username'
+        )
+    ),
+    %(cmd => 'history', desc => 'Show the last commands entered for the current user', tags => @(
+        'Linux', 'history', 'last', 'commands', 'user'
+        )
+    ),
+    %(cmd => 'arp -a', desc => 'Display the current arp table', tags => @(
+        'Linux', 'arp', 'table', 'MAC'
+        )
+    ),
+    %(cmd => 'netstat -anot', desc => 'Display network connections', tags => @(
+        'Linux', 'net', 'stat', 'TCP', 'UDP', 'connections'
+        )
+    ),
+    %(cmd => 'ps -elf', desc => 'View information on a selection of running processes', tags => @(
+        'Linux', 'ps', 'elf', 'processes', 'monitor', 'status'
+        )
+    ),
+    %(cmd => 'ps -elf | grep root', desc => 'View information on a selection of running processes owned by root', tags => @(
+        'Linux', 'ps', 'elf', 'root', 'processes', 'monitor'
+        )
+    ),
+    %(cmd => 'ls -la /var/www/html/', desc => 'List the contents of html directory for web resources', tags => @(
+        'Linux', 'ls', '/var/www/html', 'web', 'html', 'listing'
+        )
+    ),
+    %(cmd => 'service apache2 status', desc => 'View status of apache2 service', tags => @(
+        'Linux', 'apache2', 'service', 'status', 'web'
+        )
+    ),
+    %(cmd => 'cat /etc/resolv.conf', desc => 'View the DNS entries for your Linux distro', tags => @(
+        'Linux', 'cat', 'etc', 'resolv.conf', 'DNS', 'distro'
+        )
+    ),
+    %(cmd => 'cat /etc/networks', desc => 'View Linux network configuration', tags => @(
+        'Linux', 'cat', 'etc', 'networks', 'config'
+        )
+    ),
+    %(cmd => 'iptables -L', desc => 'Display all iptables rules', tags => @(
+        'Linux', 'iptables', 'networking', 'rules', 'ACL'
+        )
+    ),
+    %(cmd => 'iptables -L -t nat', desc => 'Display all natting iptables rules', tags => @(
+        'Linux', 'iptables', 'nat', 'rules', 'ACL'
+        )
+    ),
+    %(cmd => 'lsof -i', desc => 'List the files that are open by which process', tags => @(
+        'Linux', 'lsof', 'list', 'files', 'process', 'open'
+        )
+    ),
+    %(cmd => 'cat /etc/services', desc => 'View services that client applications use', tags => @(
+        'Linux', 'cat', 'etc', 'services', 'client', 'applications'
+        )
+    ),
+    %(cmd => 'grep 80 /etc/services', desc => 'View services that utilize port 80', tags => @(
+        'Linux', 'grep', '80', 'web', 'services', 'port'
+        )
+    ),
+    %(cmd => 'w', desc => 'Display who is logged into the Linux and Unix-like server, and what they are doing at command execution time', tags => @(
+        'Linux', 'w', 'logged', 'login', 'command', 'execution'
+        )
+    ),
+    %(cmd => 'route -n', desc => 'Display the route table for Linux/Debian based systems', tags => @(
+        'Linux', 'route', '-n', 'routing', 'network', 'recon'
+        )
+    ),
+    %(cmd => 'cat /etc/passwd', desc => 'Display the contents of /etc/passwd', tags => @(
+        'Linux', 'cat', 'etc', 'passwd', 'password', 'recon'
+        )
+    ),
+    %(cmd => 'cat /etc/passwd | awk -F : \'{if (\$3 > 999 && \$3 < 60001) print \$1,\$3,\$6}\'', desc => 'Display only users of /etc/passwd', tags => @(
+        'Linux', 'cat', 'etc', 'passwd', 'awk', 'regex', 'password', 'recon'
+        )
+    ),
+    %(cmd => 'cat /etc/motd', desc => 'Display the message of the day for any sensitive info', tags => @(
+        'Linux', 'cat', 'etc', 'motd', 'information', 'recon'
+        )
+    ),
+    %(cmd => 'cat /etc/group', desc => 'Display the groups in /etc/group', tags => @(
+        'Linux', 'cat', 'etc', 'group', 'recon'
+        )
+    ),
+    %(cmd => 'cat /etc/shadow', desc => 'Display the password hashes (Must be root)', tags => @(
+        'Linux', 'cat', 'etc', 'shadow', 'password', 'hashes', 'recon'
+        )
+    ),
 );
 
 @tips = @(
@@ -1260,6 +1389,10 @@
     ),
     %(tips => 'Red tip #227: Not using notifications yet for C2 events? For @armitagehacker Cobalt Strike check out', tags => @(
         'redtip', '#227', 'notifications', 'C2', 'events', 'CobaltStrike'
+        )
+    ),
+    %(tips => 'Red tip #228: Need a fully fledged phishing framework? Check out the amazing Fierce Phish by @Raikiasec <3 https://github.com/Raikia/FiercePhish', tags => @(
+        'redtip', '#228', 'phishing', 'framework', 'FiercePhish', 'King', 'Raikiasec'
         )
     ),
 );
