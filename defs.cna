@@ -1247,7 +1247,7 @@
         'redtip', '#191', 'domain', 'LDAP', 'Printers', 'creds', 'vulns', 'account', 'hash'
         )
     ),
-    %(tips => 'Red tip #192: Get-WmiObject -Class MicrosoftDNS_AType -NameSpace Root\MicrosoftDNS -ComputerName DC001 | Export-CSV -not dns.csv' tags => @(
+    %(tips => 'Red tip #192: Get-WmiObject -Class MicrosoftDNS_AType -NameSpace Root\MicrosoftDNS -ComputerName DC001 | Export-CSV -not dns.csv', tags => @(
         'redtip', '#192', 'gmwi', 'wmi', 'DNS', 'csv'
         )
     ),
