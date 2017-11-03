@@ -1216,7 +1216,7 @@
         )
     ),
     %(tips => 'Red tip #184: We always talk about Windows and AD. But now let’s have a look at Linux and AD with https://medium.com/@br4nsh/from-linux-to-ad-10efb529fae9', tags => @(
-        'redtip', '#184', 'Windows', 'AD', 'linux'
+        'redtip', '#184', 'windows', 'AD', 'linux'
         )
     ),
     %(tips => 'Red tip #185: Use WSUS for lateral movement https://github.com/AlsidOfficial/WSUSpendu/blob/master/WSUSpendu.ps1', tags => @(
