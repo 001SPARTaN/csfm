@@ -117,6 +117,61 @@ sub add_def {
     reload_defs();
 }
 
+beacon_command_register("csfm", "The Red Team Operator's Guide to the Galaxy",
+    "\nSyntax: csfm [List]\n" .
+    "List all the options to use csfm\n" .
+    "\nQueries a database for well known commands, or diplays great tips or tricks for a Red Team Operator.\n" .
+    "Your friendly Red Team Operator Guide to the Galaxy by 001SPARTaN and r3dQu1nn!\n" .
+    "\nExample: search computer, tip ntlm\n"
+
+);
+
+alias csfm {
+
+    if ($2 ismatch 'List') {
+        local('$out');
+        $out = "csfm Command Options\n";
+        $out .= "    \c0===============\n\n";
+        $out .= "    Option                   Description\n";
+        $out .= "\c0    ------                   -----------\n";
+        blog($1, $out);
+        blog2($1, "\cBsearch [option]          Search the database for common commands, and tips");
+        blog2($1, "\cBtip [option]             Display Red Team Tips");
+        blog2($1, "\cBruncmd [number]          Run a command number returned by search");
+        blog2($1, "\cBadd [Enter]              Dialog menu to add a command to the database");
+    }
+
+    if ($2 ismatch 'Smile') {
+        local('$smile');
+        $smile = "\n";
+        $smile .= "\t\c9░░░░░░░░░░░███████░░░░░░░░░░░\n";
+        $smile .= "\t\c9░░░░░░░████░░░░░░░████░░░░░░░\n";
+        $smile .= "\t\c9░░░░░██░░░░░░░░░░░░░░░██░░░░░\n";
+        $smile .= "\t\c9░░░██░░░░░░░░░░░░░░░░░░░██░░░\n";
+        $smile .= "\t\c9░░█░░░░░░░░░░░░░░░░░░░░░░░█░░\n";
+        $smile .= "\t\c9░█░░████░░░░░░░░██████░░░░░█░\n";
+        $smile .= "\t\c9█░░█░░░██░░░░░░█░░░░███░░░░░█\n";
+        $smile .= "\t\c9█░█░░░░░░█░░░░░█░░░░░░░█░░░░█\n";
+        $smile .= "\t\c9█░█████████░░░░█████████░░░░█\n";
+        $smile .= "\t\c9█░░░░░░░░░░░░░░░░░░░░░░░░░░░█\n";
+        $smile .= "\t\c9█░░░░░░░░░░░░░░░░░░░░░░░░░░░█\n";
+        $smile .= "\t\c9█░░░████████████████████░░░░█\n";
+        $smile .= "\t\c9░█░░░█▓▓▓▓▓▓▓▓█████▓▓▓█░░░░█░\n";
+        $smile .= "\t\c9░█░░░░█▓▓▓▓▓██░░░░██▓██░░░░█░\n";
+        $smile .= "\t\c9░░█░░░░██▓▓█░░░░░░░▒██░░░░█░░\n";
+        $smile .= "\t\c9░░░██░░░░██░░░░░░▒██░░░░██░░░\n";
+        $smile .= "\t\c9░░░░░██░░░░███████░░░░██░░░░░\n";
+        $smile .= "\t\c9░░░░░░░███░░░░░░░░░███░░░░░░░\n";
+        $smile .= "\t\c9░░░░░░░░░░█████████░░░░░░░░░░\n";
+        blog($1, $smile);
+    }
+
+    if ($2 is $null) {
+        berror($1, "\c4Need to specify additional syntax! Use the 'List' command for help");
+        blog($1, "\cBSyntax Example: csfm List");
+    }
+}
+
 alias search {
     local('%entry $index $cmd $desc');
     # TODO: Allow search to narrow results by specifying multiple tags (space separated)
