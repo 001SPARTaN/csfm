@@ -11,7 +11,7 @@ global('@database @results @customs');
 @customs = @(); # Any custom definitions
 
 sub search {
-    local('$index $arg %entry @tags');
+    local('$index $arg %entry @tags @lctags');
 
     clear(@results); # Make sure no leftovers from a previous search
 
@@ -23,6 +23,11 @@ sub search {
     foreach %entry (@database) {
         @tags = %entry["tags"];
 
+        # Super stupid way of doing this, but we want all our tags to be lowercase to allow proper matching
+        foreach $tag (@tags) {
+            add(@lctags, lc($tag), -1);
+        }
+
         # If search term is empty or *, return all entries
         if (($1 eq $null) || ($1 eq '*')) {
             %entry["index"] = $index;
@@ -30,7 +35,7 @@ sub search {
             $index++;
         }
         # Otherwise lowercase search term and search for it in tags
-        else if (lc($arg) in %entry["tags"]) {
+        else if (lc($arg) in @lctags) {
             println("Found result: " . %entry);
             %entry["index"] = $index;
             add(@results, %entry, -1);
@@ -48,7 +53,7 @@ sub search {
 
 # Same search function as before, but only looks for tips
 sub tip {
-    local('$index $arg %entry @tags');
+    local('$index $arg %entry @tags @lctags');
 
     clear(@results);
 
@@ -59,12 +64,17 @@ sub tip {
     foreach %entry (@tips) {
         @tags = %entry["tags"];
 
+        # Super stupid way of doing this, but we want all our tags to be lowercase to allow proper matching
+        foreach $tag (@tags) {
+            add(@lctags, lc($tag), -1);
+        }
+
         if (($1 eq $null) || ($1 eq '*')) {
             %entry["index"] = $index;
             add(@results, %entry, -1);
             $index++;
         }
-        else if (lc($arg) in %entry["tags"]) {
+        else if (lc($arg) in @lctags) {
             println("Found result: " . %entry);
             %entry["index"] = $index;
             add(@results, %entry, -1);

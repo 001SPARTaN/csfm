@@ -61,7 +61,7 @@
         )
     ),
     %(cmd => 'wmic ntdomain get [options]', desc => 'Get detailed information about the Domain Controller on the network with wmic. Use [/?] for a complete list of options.', tags => @(
-        'ntdomain', 'DomainController', 'domain', 'DC', 'enum', 'recon', 'wmic'
+        'ntdomain', 'DomainController', 'domain', 'dc', 'enum', 'recon', 'wmic'
         )
     ),
     %(cmd => 'wmic bios list full', desc => 'Get detailed information about the BIOS on the system with wmic.', tags => @(
@@ -85,11 +85,11 @@
         )
     ),
     %(cmd => 'nbtstat -A [Target IP]', desc => 'Returns the NetBIOS name table and MAC address of the address card for the remote computer name specified.', tags => @(
-        'computer', 'nbtstat', 'network', 'MAC', 'enum', 'recon', 'NetBIOS'
+        'computer', 'nbtstat', 'network', 'mac', 'enum', 'recon', 'NetBIOS'
         )
     ),
     %(cmd => 'nslookup', desc => 'Displays information that you can use to diagnose Domain Name System (DNS) infrastructure. Resolve IP <--> Domain Name.', tags => @(
-        'computer', 'nslookup', 'network', 'DNS', 'lookup', 'enum', 'recon'
+        'computer', 'nslookup', 'network', 'dns', 'lookup', 'enum', 'recon'
         )
     ),
     %(cmd => 'reg query [keyname]', desc => 'Returns a list of the next tier of subkeys and entries that are located under a specified subkey in the registry.', tags => @(
