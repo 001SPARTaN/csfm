@@ -243,6 +243,11 @@
         'subnet', 'dsquery', 'recon', 'enum', 'AD', 'OU'
         )
     ),
+    #MSSQL
+    %(cmd => 'sqlcmd -s localhost -q "exec sp_databases"', desc => 'Returns list of local MSSQL databases', tags => @(
+        'sql', 'mssql', 'enum', 'recon', 'database', 'sqlcmd'
+        )
+    ),
     #Linux
     %(cmd => 'cat /etc/issue', desc => 'Verify Linux distro', tags => @(
         'linux', 'etc', 'issue', 'cat', 'distro'
