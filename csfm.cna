@@ -48,6 +48,8 @@ sub search {
             add(@results, %entry, -1);
             $index++; 
         }
+
+        clear(@lctags);
     }
 }
 
@@ -86,6 +88,8 @@ sub tip {
             add(@results, %entry, -1);
             $index++; 
         }
+
+        clear(@lctags);
     }
 }
 
