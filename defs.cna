@@ -214,6 +214,14 @@
         'recon', 'tcp', 'powershell', 'enum', 'computer', 'sockets', 'IP', 'Port', 'network'
         )
     ),
+    %(cmd => '[System.Net.Dns]::GetHostbyAddress("8.8.8.8")', desc => 'Resolve IP to hostname', tags => @(
+        'recon', 'powershell', 'net', 'hostname', 'IP', 'dns', 'network'
+        )
+    ),
+    %(cmd => '[System.Net.Dns]::GetHostEntry("host.domain")', desc => 'Resolve hostname to IP', tags => @(
+        'recon', 'powershell', 'net', 'dns', 'IP', 'hostname', 'network'
+        )
+    ),
     #dsquery
     %(cmd => 'dsquery computer -name <name>*', desc => 'Search for computers with a name similar to <name>.', tags => @(
         'computer', 'name', 'dsquery', 'recon', 'enum'
@@ -245,6 +253,18 @@
     ),
     #MSSQL
     %(cmd => 'sqlcmd -s localhost -q "exec sp_databases"', desc => 'Returns list of local MSSQL databases', tags => @(
+        'sql', 'mssql', 'enum', 'recon', 'database', 'sqlcmd'
+        )
+    ),
+    %(cmd => 'sqlcmd -s localhost -d DATABASE -q "SELECT count(*) FROM TABLE"', desc => 'Returns number of entries in TABLE', tags => @(
+        'sql', 'mssql', 'enum', 'recon', 'database', 'sqlcmd'
+        )
+    ),
+    %(cmd => 'sqlcmd -s localhost -d DATABASE -q "SELECT TOP 10 * FROM TABLE"', desc => 'Returns top 10 rows from TABLE', tags => @(
+        'sql', 'mssql', 'enum', 'recon', 'database', 'sqlcmd'
+        )
+    ),
+    %(cmd => 'sqlcmd -s localhost -d DATABASE -q "SELECT * FROM SYSOBJECTS WHERE TYPE = \'U\' ORDER BY NAME"', desc => 'Returns list of table names in DATABASE', tags => @(
         'sql', 'mssql', 'enum', 'recon', 'database', 'sqlcmd'
         )
     ),
