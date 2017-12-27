@@ -141,8 +141,9 @@ beacon_command_register("csfm", "The Red Team Operator's Guide to the Galaxy",
 );
 
 alias csfm {
+    $arg = lc($2);
 
-    if ($2 ismatch 'List') {
+    if ($arg ismatch 'list') {
         local('$out');
         $out = "csfm Command Options\n";
         $out .= "    \c0===============\n\n";
@@ -155,7 +156,7 @@ alias csfm {
         blog2($1, "\cBadd [Enter]              Dialog menu to add a command to the database");
     }
 
-    if ($2 ismatch 'Smile') {
+    if ($2 ismatch 'smile') {
         local('$smile');
         $smile = "\n";
         $smile .= "\t\c9░░░░░░░░░░░███████░░░░░░░░░░░\n";
@@ -181,8 +182,8 @@ alias csfm {
     }
 
     if ($2 is $null) {
-        berror($1, "\c4Need to specify additional syntax! Use the 'List' command for help");
-        blog($1, "\cBSyntax Example: csfm List");
+        berror($1, "\c4Need to specify additional syntax! Use the 'list' command for help");
+        blog($1, "\cBSyntax Example: csfm list");
     }
 }
 
